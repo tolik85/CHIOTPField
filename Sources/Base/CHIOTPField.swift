@@ -49,7 +49,7 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
     }
 
     //private
-    private lazy var stackView: UIStackView = {
+    public lazy var stackView: UIStackView = {
         let s = UIStackView(frame: self.bounds)
         s.axis = .horizontal
         s.alignment = .fill
