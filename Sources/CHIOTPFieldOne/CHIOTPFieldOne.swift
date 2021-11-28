@@ -27,6 +27,12 @@ import UIKit
 
 @IBDesignable
 open class CHIOTPFieldOne: CHIOTPField<CHIOTPFieldOneLabel> {
+    @IBInspectable
+    public var respectRTL: Bool = true {
+        didSet {
+            stackView.semanticContentAttribute = respectRTL ? .unspecified : .forceLeftToRight
+        }
+    }
 
     @IBInspectable
     public override var numberOfDigits: Int { didSet { redraw() } }
