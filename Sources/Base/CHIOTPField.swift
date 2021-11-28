@@ -47,6 +47,13 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
             self.changeText(oldValue: oldValue, newValue: text)
         }
     }
+    
+    @IBInspectable
+    public var respectRTL: Bool = true {
+        didSet {
+            stackView.semanticContentAttribute = respectRTL ? .unspecified : .forceLeftToRight
+        }
+    }
 
     //private
     private lazy var stackView: UIStackView = {
